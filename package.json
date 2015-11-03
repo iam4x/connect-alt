@@ -1,0 +1,36 @@
+{
+  "name": "connect-alt",
+  "version": "1.0.0",
+  "description": "Decorator for passing Altjs store state through props",
+  "main": "dist/main.js",
+  "scripts": {
+    "prepublish": "babel src/main.js -o dist/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iam4x/connect-alt.git"
+  },
+  "keywords": [
+    "alt",
+    "flux",
+    "react",
+    "decorator",
+    "props",
+    "component",
+    "es7"
+  ],
+  "author": "iam4x",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iam4x/connect-alt/issues"
+  },
+  "homepage": "https://github.com/iam4x/connect-alt#readme",
+  "devDependencies": {
+    "babel-cli": "^6.1.1",
+    "babel-plugin-syntax-jsx": "^6.0.14",
+    "babel-plugin-transform-react-jsx": "^6.0.18",
+    "babel-preset-es2015": "^6.0.15",
+    "babel-preset-stage-0": "^6.0.15"
+  }
+}
