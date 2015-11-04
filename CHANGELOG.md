@@ -1,3 +1,7 @@
+## v1.0.3 (5 nov 2015)
+
+* Rollback to babel 5.0, fix support for IE9
+
 ## v1.0.2 (4 nov 2015)
 
 * Copy static methods from original component to decorated one (fix #1)
