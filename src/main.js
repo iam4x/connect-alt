@@ -34,6 +34,17 @@ export default function connectToStores(reducer) {
       }
     }
 
+    // Copy static methods on decorated component
+    // usefull is you define `onEnter` hook for `react-router`
+    Object.getOwnPropertyNames(DecoratedComponent).forEach(function(prop) {
+      // Copy only fn and not defined ones on `ConnectToStoresWrapper`
+      if (typeof DecoratedComponent[prop] === 'function' &&
+          !ConnectToStoresWrapper[prop]) {
+        const staticMethod = DecoratedComponent[prop];
+        ConnectToStoresWrapper[prop] = staticMethod;
+      }
+    });
+
     return ConnectToStoresWrapper;
   };
 }
