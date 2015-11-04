@@ -1,11 +1,11 @@
 {
   "name": "connect-alt",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Decorator for passing Altjs store state through props",
   "main": "dist/main.js",
   "scripts": {
     "prepublish": "babel src/main.js -o dist/main.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "babel-tape-runner src/__tests__.js"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,9 @@
     "babel-plugin-syntax-jsx": "^6.0.14",
     "babel-plugin-transform-react-jsx": "^6.0.18",
     "babel-preset-es2015": "^6.0.15",
-    "babel-preset-stage-0": "^6.0.15"
+    "babel-preset-stage-0": "^6.0.15",
+    "babel-tape-runner": "^1.3.0",
+    "react": "^0.14.2",
+    "tape": "^4.2.2"
   }
 }
