@@ -1,3 +1,8 @@
+## v1.0.4 (5 nov 2015)
+
+* filter properties to copy (fix #2)
+* use custom `takeSnapshot`
+
 ## v1.0.3 (5 nov 2015)
 
 * Rollback to babel 5.0, fix support for IE9
