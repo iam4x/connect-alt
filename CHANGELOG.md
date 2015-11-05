@@ -1,3 +1,7 @@
+## v1.0.5 (5 nov 2015)
+
+* revert custom `takeSnapshot` (fix #3)
+
 ## v1.0.4 (5 nov 2015)
 
 * filter properties to copy (fix #2)
