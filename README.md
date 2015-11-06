@@ -15,7 +15,7 @@ class Flux extends Alt {
 
   constructor(config) {
     super(config);
-    this.FinalStore = makeFinalStore(alt);
+    this.FinalStore = makeFinalStore(this);
   }
 
 }
