@@ -5,6 +5,7 @@
   "main": "dist/main.js",
   "scripts": {
     "prepublish": "babel src/main.js -o dist/main.js",
+    "dev": "npm run prepublish -- --watch",
     "test": "babel-tape-runner src/__tests__.js"
   },
   "repository": {
@@ -31,5 +32,8 @@
     "babel-tape-runner": "^1.3.0",
     "react": "^0.14.2",
     "tape": "^4.2.2"
+  },
+  "dependencies": {
+    "react-pure-render": "^1.0.2"
   }
 }

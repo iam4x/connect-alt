@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
+import PureComponent from 'react-pure-render/component';
 
 // Default `fn` property names
 // can vary on browsers
@@ -6,7 +7,7 @@ const excludedProps = Object.getOwnPropertyNames(function() {});
 
 export default function connectToStores(reducer) {
   return function(DecoratedComponent) {
-    class ConnectToStoresWrapper extends Component {
+    class ConnectToStoresWrapper extends PureComponent {
       static contextTypes = { flux: PropTypes.object.isRequired }
 
       state = { customProps: reducer(this.takeSnapshot()) };
