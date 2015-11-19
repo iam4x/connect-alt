@@ -1,3 +1,7 @@
+## v1.0.6
+
+* use [react-pure-render](https://github.com/gaearon/react-pure-render) for performance issues
+
 ## v1.0.5 (5 nov 2015)
 
 * revert custom `takeSnapshot` (fix #3)
