@@ -1,7 +1,7 @@
 import test from 'tape';
 import React, { Component } from 'react';
 
-import connect from './src/main';
+import connect from './main';
 
 function noop() {};
 
