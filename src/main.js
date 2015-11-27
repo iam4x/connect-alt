@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import PureComponent from 'react-pure-render/component';
+import { snapshot } from 'alt/lib/utils/StateFunctions';
 
 // Default `fn` property names
 // can vary on browsers
@@ -24,7 +25,7 @@ export default function connectToStores(reducer) {
 
       takeSnapshot() {
         const { flux } = this.context;
-        return JSON.parse(flux.takeSnapshot());
+        return snapshot(flux);
       }
 
       handleStoresChange = () =>
