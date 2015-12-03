@@ -24,7 +24,13 @@ export default function connectToStores(reducer) {
 
       takeSnapshot() {
         const { flux } = this.context;
-        return JSON.parse(flux.takeSnapshot());
+
+        return Object.keys(flux.stores)
+          .reduce(function (obj, storeHandle) {
+            const storeName = storeHandle.displayName || storeHandle;
+            obj[storeName] = flux.getStore(storeName).getState();
+            return obj;
+          }, {});
       }
 
       handleStoresChange = () =>
