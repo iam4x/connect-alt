@@ -51,7 +51,12 @@ export default function connectToStores(reducer) {
 
       render() {
         const { customProps } = this.state;
-        return (<DecoratedComponent { ...this.props } { ...customProps } />);
+        return (
+          <DecoratedComponent
+            ref='decoratedComponent'
+            { ...this.props }
+            { ...customProps } />
+        );
       }
     }
 
