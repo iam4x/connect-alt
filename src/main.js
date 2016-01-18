@@ -5,10 +5,18 @@ import PureComponent from 'react-pure-render/component';
 // can vary on browsers
 const excludedProps = Object.getOwnPropertyNames(function() {});
 
+// borrowed from `react-redux/connect`
+// https://github.com/rackt/react-redux/blob/master/src/components/connect.js#L17
+function getDisplayName(WrappedComponent) {
+  return WrappedComponent.displayName || WrappedComponent.name || 'Component'
+}
+
 export default function connectToStores(reducer) {
   return function(DecoratedComponent) {
     class ConnectToStoresWrapper extends PureComponent {
+
       static contextTypes = { flux: PropTypes.object.isRequired }
+      static displayName = `Connect(${getDisplayName(DecoratedComponent)})`
 
       state = { customProps: reducer(this.takeSnapshot()) };
 
