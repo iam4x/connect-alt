@@ -1,3 +1,9 @@
+### v1.0.7
+
+* provide a way to access to the DecoratedComponent instance (d64b703)
+* copy correct displayName from decorated component (7e87b60)
+* fixes an issue where props where incorrect on DecoratedComponent on initialization (fe5c762)
+
 ## v1.0.6
 
 * use [react-pure-render](https://github.com/gaearon/react-pure-render) for performance issues
