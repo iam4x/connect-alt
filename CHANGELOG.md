@@ -1,8 +1,17 @@
-### v1.0.7
+### v1.0.9
+
+* add static prop to DecoratedComponent
+* revert refs to DecoratedComponent
+
+### v1.0.8
 
 * provide a way to access to the DecoratedComponent instance (d64b703)
 * copy correct displayName from decorated component (7e87b60)
 * fixes an issue where props where incorrect on DecoratedComponent on initialization (fe5c762)
+
+## v1.0.7
+
+* re-revert custom `takeSnapshot`
 
 ## v1.0.6
 
