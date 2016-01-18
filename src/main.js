@@ -17,6 +17,7 @@ export default function connectToStores(reducer) {
 
       static contextTypes = { flux: PropTypes.object.isRequired }
       static displayName = `Connect(${getDisplayName(DecoratedComponent)})`
+      static decoratedComponent = DecoratedComponent
 
       state = { customProps: reducer(this.takeSnapshot()) };
 
