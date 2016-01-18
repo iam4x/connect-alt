@@ -1,6 +1,6 @@
 {
   "name": "connect-alt",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Decorator for passing Altjs store state through props",
   "main": "dist/main.js",
   "scripts": {
