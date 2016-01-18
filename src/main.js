@@ -15,6 +15,10 @@ export default function connectToStores(reducer) {
       componentDidMount() {
         const { flux } = this.context;
         flux.FinalStore.listen(this.handleStoresChange);
+
+        // a store update may have been updated between state
+        // initialization and listening for changes from store
+        return this.handleStoresChange();
       }
 
       componentWillUnmount() {
@@ -33,8 +37,9 @@ export default function connectToStores(reducer) {
           }, {});
       }
 
-      handleStoresChange = () =>
-        this.setState({ customProps: reducer(this.takeSnapshot()) })
+      handleStoresChange = () => {
+        return this.setState({ customProps: reducer(this.takeSnapshot()) });
+      }
 
       render() {
         const { customProps } = this.state;
