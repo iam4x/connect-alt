@@ -42,6 +42,8 @@ class Example extends Component {
 }
 ```
 
+You can pass as many stores you want to the decorator: `@connect('session', 'posts', 'foo', 'bar')`, you will get them into props with the suffix `Store`.
+
 #### III. (Alternative) Use the decorator with a reducer function in your components
 
 ***Warning, this is expensive because `connect-alt` will be listening for any stores update and not the only concerned***
