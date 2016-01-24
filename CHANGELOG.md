@@ -1,3 +1,7 @@
+### v1.1.0
+
+* add support of listening specific stores (4e1953e)
+
 ### v1.0.9
 
 * add static prop to DecoratedComponent
