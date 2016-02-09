@@ -29,6 +29,13 @@ export default function connectToStores(...connectArgs) {
             connectType: 'reducerFn',
             customProps: connectArgs[0](this.takeSnapshot())
           };
+        } else if (typeof connectArgs[connectArgs.length - 1] === 'function') {
+          // if we have a reducer fn as the last arg we
+          // will call this fn on the full alt state
+          this.state = {
+            connectType: 'storesReducerFn',
+            customProps: connectArgs[connectArgs.length - 1](this.takeSnapshot())
+          };
         } else if (typeof connectArgs[0] === 'string') {
           // if it's string it will be stores names,
           // we want to provide the stores state into props
@@ -73,6 +80,17 @@ export default function connectToStores(...connectArgs) {
               return storeListener();
             });
             break;
+          case 'storesReducerFn':
+            // bind every specified store to the handleStoresChange listener
+            connectArgs.forEach((storeName) => {
+              if (typeof storeName === 'string') {
+                flux.getStore(storeName).listen(this.handleStoresChange);
+              }
+            });
+            // a store update may have been updated between state
+            // initialization and listening for changes from store
+            this.handleStoresChange();
+            break;
         }
 
       }
@@ -94,6 +112,15 @@ export default function connectToStores(...connectArgs) {
             });
             this.listeners = null;
             break;
+          case 'storesReducerFn':
+            connectArgs.forEach(storeName => {
+              if (typeof storeName === 'string') {
+                flux.getStore(storeName).unlisten(this.handleStoresChange);
+              }
+            });
+            this.listeners = null;
+            break;
+
         }
       }
 
@@ -111,7 +138,7 @@ export default function connectToStores(...connectArgs) {
       handleStoresChange = () => {
         return this.setState({
           ...this.state,
-          customProps: connectArgs[0](this.takeSnapshot())
+          customProps: connectArgs[connectArgs.length - 1](this.takeSnapshot())
         });
       }
 
