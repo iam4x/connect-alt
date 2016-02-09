@@ -1,3 +1,8 @@
+### v1.1.1
+
+* change `Array.includes` to `Array.indexOf` for older browsers without polyfill imported (#8)
+* add new combined method of listening specific store and applying a reducer to it (#7)
+
 ### v1.1.0
 
 * add support of listening specific stores (4e1953e)
