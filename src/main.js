@@ -139,7 +139,7 @@ export default function connectToStores(...connectArgs) {
     // usefull is you define `onEnter` hook for `react-router`
     Object.getOwnPropertyNames(DecoratedComponent).forEach(function(prop) {
       // Copy only fn and not defined ones on `ConnectToStoresWrapper`
-      if (!excludedProps.includes(prop) &&
+      if (excludedProps.indexOf(prop) < 0 &&
           typeof DecoratedComponent[prop] === 'function' &&
           !ConnectToStoresWrapper[prop]) {
         const staticMethod = DecoratedComponent[prop];
