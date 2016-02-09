@@ -34,7 +34,7 @@ export default function connectToStores(...connectArgs) {
           // will call this fn on the full alt state
           this.state = {
             connectType: 'storesReducerFn',
-            customProps: connectArgs[connectArgs.length - 1](this.takeSnapshot()),
+            customProps: connectArgs[connectArgs.length - 1](this.takeSnapshot())
           };
         } else if (typeof connectArgs[0] === 'string') {
           // if it's string it will be stores names,
@@ -138,7 +138,7 @@ export default function connectToStores(...connectArgs) {
       handleStoresChange = () => {
         return this.setState({
           ...this.state,
-          customProps: connectArgs[connectArgs.length - 1](this.takeSnapshot()),
+          customProps: connectArgs[connectArgs.length - 1](this.takeSnapshot())
         });
       }
 
