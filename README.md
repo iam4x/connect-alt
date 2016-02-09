@@ -52,7 +52,7 @@ You can pass as many stores you want to the decorator: `@connect('session', 'pos
 import React, { Component, PropTypes } from 'react';
 import connect from 'connect-alt';
 
-@connect(({ session: { currentUser } }) => ({ currentUser })
+@connect(({ session: { currentUser } }) => ({ currentUser }))
 class Example extends Component {
 
   static propTypes = { currentUser: PropTypes.object.isRequired }
