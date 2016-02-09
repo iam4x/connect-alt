@@ -86,6 +86,28 @@ class Flux extends Alt {
 export default Flux;
 ```
 
+#### III. (Alternative 2) Combine the stores you listen and the FinalStore reducer
+
+```javascript
+import React, { Component, PropTypes } from 'react';
+import connect from 'connect-alt';
+
+@connect('session', ({ session: { currentUser } }) => ({ currentUser }))
+class Example extends Component {
+
+  static propTypes = { currentUser: PropTypes.object.isRequired }
+
+  render() {
+    const { currentUser } = this.props;
+
+    return (
+      <pre>{ JSON.stringify(currentUser, null, 4)</pre>
+    );
+  }
+
+}
+```
+
 ## Examples
 
 See [isomorphic-flux-boilerplate](https://github.com/iam4x/isomorphic-flux-boilerplate) for a complete app example.
