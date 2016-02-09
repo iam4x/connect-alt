@@ -80,6 +80,7 @@ export default function connectToStores(...connectArgs) {
               return storeListener();
             });
             break;
+
           case 'storesReducerFn':
             // bind every specified store to the handleStoresChange listener
             connectArgs.forEach((storeName) => {
@@ -92,7 +93,6 @@ export default function connectToStores(...connectArgs) {
             this.handleStoresChange();
             break;
         }
-
       }
 
       componentWillUnmount() {
@@ -112,6 +112,7 @@ export default function connectToStores(...connectArgs) {
             });
             this.listeners = null;
             break;
+
           case 'storesReducerFn':
             connectArgs.forEach(storeName => {
               if (typeof storeName === 'string') {
@@ -120,7 +121,6 @@ export default function connectToStores(...connectArgs) {
             });
             this.listeners = null;
             break;
-
         }
       }
 
