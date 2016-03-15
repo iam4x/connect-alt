@@ -158,7 +158,12 @@ export default function connectToStores(...connectArgs) {
 
       render() {
         const { customProps } = this.state;
-        return (<DecoratedComponent { ...this.props } { ...customProps } />);
+        return (
+          <DecoratedComponent
+            ref='decorated'
+            { ...this.props }
+            { ...customProps } />
+        );
       }
     }
 
