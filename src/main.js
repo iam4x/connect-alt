@@ -160,7 +160,7 @@ export default function connectToStores(...connectArgs) {
         const { customProps } = this.state;
         return (
           <DecoratedComponent
-            ref='decorated'
+            ref={ DecoratedComponent.prototype.setState ? 'decorated' : undefined }
             { ...this.props }
             { ...customProps } />
         );
