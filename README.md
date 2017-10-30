@@ -24,7 +24,8 @@ render(<AltContainer flux={ new Flux() }><App /></AltContainer>);
 ***This is the most performant way, it only listen for the specific store changes and not waiting for all stores to update***
 
 ```javascript
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import connect from 'connect-alt';
 
 @connect('session')
@@ -49,7 +50,8 @@ You can pass as many stores you want to the decorator: `@connect('session', 'pos
 ***Warning, this is expensive because `connect-alt` will be listening for any stores update and not the only concerned***
 
 ```javascript
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import connect from 'connect-alt';
 
 @connect(({ session: { currentUser } }) => ({ currentUser }))
@@ -89,7 +91,8 @@ export default Flux;
 #### III. (Alternative 2) Combine the stores you listen and the FinalStore reducer
 
 ```javascript
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import connect from 'connect-alt';
 
 @connect('session', ({ session: { currentUser } }) => ({ currentUser }))
