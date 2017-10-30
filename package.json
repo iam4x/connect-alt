@@ -34,6 +34,7 @@
     "tape": "^4.2.2"
   },
   "dependencies": {
+    "prop-types": "^15.6.0",
     "react-pure-render": "^1.0.2"
   }
 }
